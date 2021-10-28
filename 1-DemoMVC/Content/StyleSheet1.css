@@ -1,0 +1,9 @@
+﻿body {
+    background-color:yellow;
+    color:red;
+}
+
+body:hover {
+    background-color: red;
+    color:yellow;
+}

@@ -1,0 +1,43 @@
+﻿@*on dit a cette vue que on lui trans met le type Employe afin que la vue soit fortement typée*@
+@*@model _5_DemoVuesRazo.Models.Employe*@
+@model _5_DemoVuesRazo.ModelView.ProdEmploye
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+@*<p>ID : @Model.Id</p>
+    <p>Nom: @Model.Nom</p>
+    <p>Prenom: @Model.Prenom</p>*@
+@section maSection{
+    <h1>Contenu de maSection</h1>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+}
+@section sousMenu{
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+}
+
+<h1>Contenu du body</h1>
+<p>ID_employe : @Model.employe.Id</p>
+<p>Nom_employe : @Model.employe.Nom</p>
+<p>Prenom_employe : @Model.employe.Prenom</p>
+
+<p>ID_produit : @Model.produit.Id</p>
+<p>Prix_produit : @Model.produit.Prix</p>
+

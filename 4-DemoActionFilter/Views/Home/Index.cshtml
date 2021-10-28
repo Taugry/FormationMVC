@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<p>@TempData["heure"]</p>
+
+
+<form action="/home/index" method="post">
+    @Html.AntiForgeryToken()
+    <input type="text" name="demo" value=""/>
+    <input type="submit" name="btnSubmit" value="Envoyer" />
+</form>
+<br/>
+<p>Contenu du champ demo : @ViewBag.Demo</p>

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<br />
+<p>ViewData : ID = @ViewData["ID"]</p>
+<br />
+<p>ViewBag : ID = @ViewBag.Id</p>
+<br />
+<p>TempData : ID = @TempData["ID"]</p>
+
+<form action="/Home/Index" method="post">
+    <br />
+    <input type="text" name="nom" value="" />
+    <input type="submit" name="btnSubmit" value="Envoyer" />
+</form>
+<br />
+<p>Nom = @ViewBag.Nom</p>

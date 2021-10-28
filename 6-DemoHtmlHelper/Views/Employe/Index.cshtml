@@ -1,0 +1,56 @@
+﻿@model _6_DemoHtmlHelper.Models.Employe
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @*Les helper fortement typée utilise des expression lamba
+        une expression lamba est une fonction anonyme
+        function(emp)
+        {
+            return emp;
+        }
+        emp => emp.Id
+    *@
+    @Html.LabelFor(emp => emp.Id, "Id : ");
+    @Html.TextBoxFor(emp => emp.Id);
+    <br />
+
+    @Html.LabelFor(emp => emp.Nom, "Nom : ");
+    @Html.TextBoxFor(emp => emp.Nom);
+    <br />
+
+    @Html.LabelFor(emp => emp.Salaire, "Salaire : ");
+    @Html.TextBoxFor(emp => emp.Salaire);
+    <br />
+
+    @Html.LabelFor(emp => emp.DepartementId, "Departement : ");
+    @Html.DropDownListFor(emp => emp.DepartementId, TempData["DepartementId"] as SelectList);
+    <br />
+
+    @Html.LabelFor(emp => emp.Type, "Niveau employe : ");
+    @Html.EnumDropDownListFor(emp => emp.Type);
+    <br />
+
+    @Html.LabelFor(emp => emp.IsActif, "Est en poste? : ");
+    @Html.CheckBoxFor(emp => emp.IsActif);
+    <br />
+
+    @Html.LabelFor(emp => emp.Email, "Email : ");
+    @Html.TextBoxFor(emp => emp.Email);
+    <br />
+
+    @Html.LabelFor(emp => emp.DateEntree);
+    @Html.TextBoxFor(emp => emp.DateEntree);
+    <br />
+
+    <button type="submit" name="btnSubmit" value="Valider">Envoyer</button>
+    <button type="reset" name="btnReset" value="reset">Réinitialiser</button>
+}
+
+<br />
+<p>La somme de 10 et 5 est : @MyHelpers.Somme(10,5)</p>
+<br />
+<p>L'heure : @MyHelpers.Heure()</p>

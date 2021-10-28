@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<a href="/Home/AboutUS?Id1=1&nom=dawan" target="_blank">About Us</a>
+<br />
+@Html.ActionLink("About Us", "AboutUs", "home", new { Id1 = 1, nom = "Dawan" }, new { target = "_blank" })
+
+
+@* cree un formulaire avec les element HTML*@
+@*<br /><br />
+    <form action="/home/About" method="POST">
+
+        <label for="Nom">Nom : </label><br />
+        <input type="text" name="Nom" placeholder="Nom..">
+        <br /><br />
+        <button type="submit" name="btnSubmit" value="Valider">Envoyer</button>
+        <button type="reset" name="btnReset" value="reset">Réinitialiser</button>
+
+    </form>*@
+
+@* cree un formulaire avec les html helper*@
+@using (Html.BeginForm("Bonjour", "Home", FormMethod.Post))
+{
+    <br />
+    @*equivalent html <label for="Nom">Nom:</label>*@
+    @Html.Label("nom", "Nom:");
+    <br />
+    @*Un TextBox est un champ de saisi, on lui ajout un attribut class form-control.
+        equivalent html : <input class="form-control" id="nom" type="text" value=""/>*@
+    @Html.TextBox("nom", null, new { @class = "form-control" , placeholder = "Nom..." })
+    <br />
+
+    @Html.Label("prenom", "Prenom:");
+    <br />
+    @Html.TextBox("prenom", null, new { @class = "form-control" , placeholder ="Prenom..."})
+    <br />
+    @:postes:
+    <br />
+    @*<input type="radio" name="Poste" value="Developpeur" id="Dev"/>*@
+    @Html.RadioButton("Poste", "Developpeur", new { id = "Dev" })
+    @Html.Label("Dev", "Developpeur");
+    <br />
+    @Html.RadioButton("Poste", "Consultant", new { id = "Cons" })
+    @Html.Label("Cons", "Consultant");
+    <br />
+    @Html.RadioButton("Poste", "Manager", new { id = "Manag" })
+    @Html.Label("Manag", "Manager");
+    <br />
+    <br />
+    @*on rempli notre dropdown list avec les données viewbag*@
+    @: Formation <br />
+    @Html.DropDownList("formations")
+    <br />
+    <button type="submit" name="btnSubmit" value="Valider">Envoyer</button>
+    <button type="reset" name="btnReset" value="reset">Réinitialiser</button>
+
+}
